@@ -77,8 +77,6 @@ RUN curl -sL https://releases.hashicorp.com/terraform/${TF_VER}/terraform_${TF_V
     rm -f terraform.zip && \
     terraform version
 
-# Copy .tflint
-COPY .tflint.hcl /root
 # Install tflint
 RUN curl -sL https://github.com/terraform-linters/tflint/releases/download/${TFLINT_VER}/tflint_linux_amd64.zip -o tflint.zip && \
     unzip tflint.zip && \
@@ -88,12 +86,4 @@ RUN curl -sL https://github.com/terraform-linters/tflint/releases/download/${TFL
     tflint --init && \
     tflint --version
 
- 
-# Install Powershell
-RUN curl -sL https://github.com/PowerShell/PowerShell/releases/download/v${POWERSHELL_CLI_VER}/powershell-${POWERSHELL_CLI_VER}-linux-alpine-x64.tar.gz -o powershell.tar.gz && \
-    mkdir /opt/powershell && \
-    tar -xzf powershell.tar.gz -C /opt/powershell && \
-    ln -s /opt/powershell/pwsh /usr/bin/pwsh && \
-    rm -f powershell.tar.gz && \
-    pwsh -Version
 

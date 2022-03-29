@@ -3,7 +3,7 @@ DESCRIPTION = "Cristian Infrastructure Management Image"
 AUTHORS = "Cristian OPS team"
 
 NAME = "infra-toolkit"
-REPOSITORY = "hub.docker.io/crcasis/"
+REPOSITORY = "crcasisdocker/"
 REGISTRY_IMAGE ?= $(REPOSITORY)$(NAME)
 
 VERSION ?= "preview"
